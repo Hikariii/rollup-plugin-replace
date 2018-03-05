@@ -76,6 +76,13 @@ function replace(options) {
 				magicString.overwrite(start, end, replacement);
 			}
 
+			if (code.indexOf('@swimlane') >= 0) {
+				console.log(hasReplacements);
+				console.log(code);
+				console.log("\n");
+				console.log("\n");
+			}
+
 			if (!hasReplacements) { return null; }
 
 			var result = { code: magicString.toString() };
