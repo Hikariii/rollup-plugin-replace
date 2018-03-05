@@ -84,7 +84,7 @@ function replace(options) {
 				magicString.overwrite(start, end, replacement);
 			}
 
-			if (code.indexOf('@swimlane/ngx-charts"') && hasReplacements) {
+			if (code.indexOf('@swimlane/ngx-charts"') >= 0 && hasReplacements) {
 				console.log(start);
 				console.log(end);
 				console.log(replacement);
