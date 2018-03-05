@@ -66,6 +66,14 @@ function replace(options) {
 			var match;
 			var start, end, replacement;
 
+			if (code.indexOf('@swimlane/ngx-charts"') >= 0) {
+				console.log(hasReplacements);
+				console.log(code);
+				console.log("----__----");
+				console.log("\n");
+				console.log("\n");
+			}
+
 			while ((match = pattern.exec(code))) {
 				hasReplacements = true;
 
@@ -76,9 +84,12 @@ function replace(options) {
 				magicString.overwrite(start, end, replacement);
 			}
 
-			if (code.indexOf('@swimlane') >= 0) {
-				console.log(hasReplacements);
-				console.log(code);
+			if (code.indexOf('@swimlane/ngx-charts"') && hasReplacements) {
+				console.log(start);
+				console.log(end);
+				console.log(replacement);
+				console.log(magicString.toString());
+				console.log("----__----");
 				console.log("\n");
 				console.log("\n");
 			}
