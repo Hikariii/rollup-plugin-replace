@@ -30,6 +30,7 @@ export default function replace(options = {}) {
 	}
 
 	const keys = Object.keys(values).sort(longest).map(escape);
+	console.log(keys);
 
 	const pattern = delimiters ?
 		new RegExp(
@@ -40,6 +41,7 @@ export default function replace(options = {}) {
 			`\\b(${keys.join('|')})\\b`,
 			'g'
 		);
+	console.log(pattern);
 
 	// convert all values to functions
 	Object.keys(values).forEach(key => {
